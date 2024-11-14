@@ -21,12 +21,16 @@ html{
 
 body{
     font-family: Public Sans, sans-serif;
-    background-color: #f7f9ff;
+    background-color: var(--Very-Light-Gray);
 }
 
 h1, h2, h3, h4, h5, h6{
      font-weight: 400;
      color: var(--Dark-Blue);
+}
+
+p{
+    color: var(--Grayish-Blue);
 }
 
 li{
@@ -40,13 +44,14 @@ a{
 .btn {
     background: linear-gradient(90deg, var(--Lime-Green), var(--Bright-Cyan));
     color: white;
+    border: none;
     padding: 15px 30px;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: 0.3s ease;
 }
 
 .btn:hover {
@@ -75,7 +80,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 10%;
+    padding: 2rem 20%;
     width: 100%;
     height: 80px;
 }
@@ -138,7 +143,6 @@ header{
 }
 
 
-
 /*** Responsive Design ***/
 @media (max-width: 998px) {
 
@@ -171,69 +175,278 @@ header{
 
 /*** Hero Start ***/
 
-.hero {
+
+.hero{
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: #2bb353 5px solid;
+    padding-left: 20%;
+    margin-top: 2rem;
 }
-
-.hero-img{
+ .hero-img{
     width: 55%;
-    background-image: url("/images/bg-intro-desktop.svg");
-    background-size: 150%;
-    margin: 0;
-    padding: 0;
+    background: url('../images/bg-intro-desktop.svg') no-repeat bottom left;
+    background-size: 140%;
+    overflow: hidden;
 }
-
-.hero-img img{
+ 
+ .hero-img img{
     width: 75%;
-    transform: translate(250px, -10px);scale: 1.3;
-}
+    transform: translate(250px,-10px) scale(1.3);
+    aspect-ratio: unset;
+    overflow: hidden;
+ }
+ 
+ .home-title {
+     font-size: 55px; 
+     line-height: 1.2; 
+     padding: 0;
+     margin-bottom: 1rem;
+ }
+ .home-text {
+     font-size: 1.25rem; 
+     line-height: 1.6;
+     margin-bottom: 2rem; 
+ }
+ 
+ .hero .hero-content {
+     width: 45%;
+     text-align: left;
+ }
 
 
-@media (max-width: 998px){
 
-    .hero{
+ @media screen and (max-width: 998px) {
+
+    .hero {
+        display: flex;
+        width: 100%;
         flex-direction: column;
+        background: var(--Very-Light-Gray);
+        padding-bottom: 60px;
+        padding: 0;
     }
 
-    .hero-content{
+    .hero-img {
+        background: url('../images/bg-intro-mobile.svg') top;
+        background-size: cover;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .hero-img img {
+        width: 75%;
+        transform: none; /* Remove any previous transform to center it */
+    }
+
+
+    .hero .hero-content {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+
+    .home-title {
+        font-size: 38px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .home-text {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 38px;
+    }
+}
+
+
+
+
+
+/*** Hero End ***/
+
+/*** Service Start ***/
+.service{
+    background-color: hsl(220, 16%, 96%);
+    padding: 100px 20%;
+}
+
+
+.service-title{
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-text{
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 80px;
+    max-width: 600px;
+    
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    text-align: left;
+}
+
+.service-icon{
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.service-card-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+.service-card-text {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+@media screen and (max-width: 998px) {
+    .service-title{
+        font-size: 32px;
         text-align: center;
     }
 
-    .hero-content h1{
-        font-size: 2.5rem;
+    .service-text{
+        text-align: center;
+        margin: auto;
+        margin-bottom: 50px;
+        max-width: none;
+     
     }
 
-    .hero-content p{
-        font-size: 1rem;
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      
+     }
+
+     .service-card {
+        text-align: center;
     }
 
-    .hero-img img{
-        width: 80%;
+    .service-card .service-card-title {
+        font-size: 20px;
     }
-}
-/*** Hero End ***/
 
-/*** features Start ***/
-.features{
-    background-color: hsl(220, 16%, 96%);
-}
-
-.features-grid{
-    display: flex;
+    .service-card .service-card-text {
+        font-size: 15px;
+    }
+ 
 }
 
-/*** features End ***/
 
-/*** Articles Start ***/
+@media screen and (max-width: 595px) {
 
-.articles img{
+    .service-grid {
+        grid-template-columns: 1fr;
+      
+     }
+
+    .service-text{
+        font-size: 15px;
+    }
+
+
+}
+
+
+/*** service End ***/
+
+/*** Blog Start ***/
+
+.blog{
+    padding: 100px 20%;
+}
+
+.blog-title{
+    margin-bottom: 50px;
+}
+
+.article-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.article-card{
+    border-radius: 5px;
+    background-color: var(--White);
+    overflow: hidden;
+}
+
+.article-img-head{
+    height: 200px;
+
+}
+
+.article-img-head .article-img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-/*** Articles End ***/
+
+.article-card .article-content{
+    padding: 20px;
+}
+
+.article-card .article-author{
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+.article-card .article-title a{ 
+    color: var(--Dark-Blue);
+    font-size: 16px;
+    transition: 0.3 ease;
+}
+.article-card .article-title: a:hover{
+    color: var(--Lime-Green)!important;
+}
+
+.article-card .article-text{
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 998px) {
+
+    .article-title{
+        margin-bottom: 30px;
+    }
+
+    .article-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 595px) {
+
+
+.article-grid {
+    grid-template-columns:1fr;
+}
+
+}
+
+
+/*** Blog End ***/
 
 /*** Footer Start ***/
 
