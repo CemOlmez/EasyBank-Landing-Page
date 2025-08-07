@@ -33,7 +33,7 @@ The main goal of this project was to practice building a responsive, visually en
 ### Links
 
 - GitHub Repository: [EasyBank-Landing-Page](https://github.com/CemOlmez/EasyBank-Landing-Page)
-- Live Demo: [DEMO on GitHub]()
+- Live Demo: [DEMO on GitHub](https://cemolmez.github.io/EasyBank-Landing-Page/)
 
 
 ### Screenshots
